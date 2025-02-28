@@ -1,0 +1,16 @@
+name: VK-S2T
+data:
+  train_label_path: ../data/how2sign/labels.train
+  dev_label_path: ../data/how2sign/labels.dev
+  test_label_path: ../data/how2sign/labels.test
+  img_path: ../data/how2sign/aug_frame3/
+  max_length: 80
+  "keypoint_path": ../data/how2sign/aug_frame3/
+training:
+  wandb: online # online or disabled
+  scale_embedding: False
+model:
+  tokenizer: ../pretrain_models/MBart_trimmed
+  transformer: ../pretrain_models/MBart_trimmed
+  visual_encoder: ../pretrain_models/mytran
+  sign_proj: True
